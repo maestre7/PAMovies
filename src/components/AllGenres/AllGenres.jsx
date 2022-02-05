@@ -18,7 +18,8 @@ export default function AllGenres() {
     async function getData() {
       await axios
         .get(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=198b2f6e124efb8ffaed4dd22cc65a8c&language=en-US`
+          /* `https://api.themoviedb.org/3/genre/movie/list?api_key=198b2f6e124efb8ffaed4dd22cc65a8c&language=en-US` */
+          'http://localhost:3001/genre/movie/list'
         )
         .then((res) => {
           setGetGenresFilms(res.data.genres);

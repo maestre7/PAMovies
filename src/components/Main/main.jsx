@@ -20,9 +20,10 @@ export default function Main() {
   useEffect(() => {
     //obtenemos los datos de peliculas de estrenos
     async function getInfo() {
+      //`https://api.themoviedb.org/3/movie/upcoming?api_key=198b2f6e124efb8ffaed4dd22cc65a8c&language=en-US&page=1adult=false`
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/upcoming?api_key=198b2f6e124efb8ffaed4dd22cc65a8c&language=en-US&page=1adult=false`
+          'http://localhost:3001/movie/upcoming'
         )
         .then((res) => {
           setGetFilms(res.data.results);

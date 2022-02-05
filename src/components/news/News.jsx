@@ -48,7 +48,7 @@ export default function News() {
   useEffect(() => {
     async function fecthData() {
       try {
-        let options = {
+        /* let options = {
           method: "GET",
           url: "https://api.newscatcherapi.com/v2/search",
           params: {
@@ -62,7 +62,8 @@ export default function News() {
             "x-api-key": "sjfM4OCbxTGAUE8yFh3WSwngU7DsBxfrdgXuDGglYaM",
           },
         };
-        const getData = await axios.request(options);
+        //const getData = await axios.request(options); */
+        const getData = await axios.get('http://localhost:3001/news');
 
         setData(getData.data.articles);
       } catch (error) {

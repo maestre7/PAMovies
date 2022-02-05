@@ -26,7 +26,8 @@ export default function ComboBox() {
       if (/[a-zA-ZñÑ0-9]/.test(value)) {
         try {
           let getData = await axios.get(
-            `https://api.themoviedb.org/3/search/movie?api_key=fb1999e69926d1387eb44c3abee6e7c5&language=en-US&query=${value}&include_adult=false`
+            //`https://api.themoviedb.org/3/search/movie?api_key=fb1999e69926d1387eb44c3abee6e7c5&language=en-US&query=${value}&include_adult=false`
+            'http://localhost:3001/search/movie'
           );
           setInput(getData.data.results);
         } catch (err) {
