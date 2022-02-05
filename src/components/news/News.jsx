@@ -63,7 +63,7 @@ export default function News() {
           },
         };
         //const getData = await axios.request(options); */
-        const getData = await axios.get('http://localhost:3001/news');
+        const getData = await axios.get(`${process.env.REACT_APP_API1}/news`);
 
         setData(getData.data.articles);
       } catch (error) {

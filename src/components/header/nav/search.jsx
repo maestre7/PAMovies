@@ -27,7 +27,7 @@ export default function ComboBox() {
         try {
           let getData = await axios.get(
             //`https://api.themoviedb.org/3/search/movie?api_key=fb1999e69926d1387eb44c3abee6e7c5&language=en-US&query=${value}&include_adult=false`
-            'http://localhost:3001/search/movie'
+            `${process.env.REACT_APP_API1}/search/movie`
           );
           setInput(getData.data.results);
         } catch (err) {

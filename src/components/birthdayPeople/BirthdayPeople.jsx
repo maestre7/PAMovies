@@ -20,7 +20,7 @@ const BirthdayPeople = () => {
   useEffect(() => {
     const axiosData = async () => {
       /* const getData = await axios.request(options); */
-      const getData = await axios.get('http://localhost:3001/birthday');
+      const getData = await axios.get(`${process.env.REACT_APP_API1}/birthday`);
 
       setData(getData.data.Birthdays);
     };
@@ -33,7 +33,7 @@ const BirthdayPeople = () => {
       const axiosData = async () => {
         const getData = await axios.get(
           /* `https://api.themoviedb.org/3/search/person?api_key=fb1999e69926d1387eb44c3abee6e7c5&language=en-US&query=${element.name}&page=1&include_adult=false` */
-          `http://localhost:3001/search/person?${element.name}`
+          `${process.env.REACT_APP_API1}/search/person?${element.name}`
         );
 
         itemData.push({
